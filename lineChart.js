@@ -125,23 +125,26 @@ chart2.selectAll("myCircles")
     chart2.append("g")
     .call(d3.axisLeft(yRange));
     
-  var tooltip1 = chart2.append("g")
+    var tooltip1 = chart2.append("g")
     .attr("class", "tooltip")
     .style("display", "none");
       
   tooltip1.append("rect")
-    .attr("width", 25)
-    .attr("height", 20)
+    .attr("width", 80)
+    .attr("height", 30)
     .attr("fill", "white")
-    .style("opacity", 0.5);
+    .style("opacity", 1)
+    .attr("stroke-width", 0.5)
+    .attr("stroke", "black")
   
   tooltip1.append("text")
-    .attr("x", 15)
+    .attr("x", 40)
+    .attr("y", 5)
     .attr("dy", "1.2em")
     .style("text-anchor", "middle")
     .attr("font-family", "sans-serif")
     .attr("font-size", "12px")
-    .attr("font-weight", "bold"); 
+    .attr("font-weight", "bold");
 
     var legend1 = chart2.append("g")
     .attr("font-family", "sans-serif")
@@ -198,16 +201,14 @@ chart2.selectAll("myCircles")
   
             tooltip1.attr("transform", "translate(" + xPosition + "," + yPosition + ")");
             if (d3.select(this).attr("id") === "sökande"){
-              tooltip1.select("text").text(d.Sökande)
+              tooltip1.select("text").text("Sökande: " + d.Sökande)
             }
             if (d3.select(this).attr("id") === "antagna"){
-              tooltip1.select("text").text(d.Antagna)
+              tooltip1.select("text").text("Antagna: " + d.Antagna)
             }
             if (d3.select(this).attr("id") === "examen"){
-              tooltip1.select("text").text(d.Examen)
+              tooltip1.select("text").text("Examen: " + d.Examen)
             }
-
       }
-
 
 })

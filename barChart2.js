@@ -164,158 +164,96 @@ d3.csv("data.csv", function(d,i,columns){
           console.log( this.id)
 
           if(d.id === 1 && this.id === "0"){
-              console.log("hej")
-          
             chart3.selectAll("rect[id='0']").attr("fill", function(d) {if (d.id === 2 ){ return "steelblue"} else return false})
-            //chart3.select("rect[id='2']").attr("fill", function(d) {if (d.id === 2 ){ return "steelblue"} else return false})
-              
           }
+
           if(d.id === 1 && this.id === "1"){
-            console.log("hej")
-        
           chart3.selectAll("rect[id='1']").attr("fill", function(d) {if (d.id === 2 ){ return "steelblue"} else return false})
-          //chart3.select("rect[id='2']").attr("fill", function(d) {if (d.id === 2 ){ return "steelblue"} else return false})
-            
           }
+
           if(d.id === 1 && this.id === "2"){
-            console.log("hej")
-        
-          chart3.selectAll("rect[id='2']").attr("fill", function(d) {if (d.id === 2 ){ return "steelblue"} else return false})
-          //chart3.select("rect[id='2']").attr("fill", function(d) {if (d.id === 2 ){ return "steelblue"} else return false})
-            
+          chart3.selectAll("rect[id='2']").attr("fill", function(d) {if (d.id === 2 ){ return "steelblue"} else return false})  
           }
+
           if(d.id === 1 && this.id === "3"){
-            console.log("hej")
-        
           chart3.selectAll("rect[id='3']").attr("fill", function(d) {if (d.id === 2 ){ return "steelblue"} else return false})
-          //chart3.select("rect[id='2']").attr("fill", function(d) {if (d.id === 2 ){ return "steelblue"} else return false})
-            
           }
+
           if(d.id === 1 && this.id === "4"){
-            console.log("hej")
-        
-          chart3.selectAll("rect[id='4']").attr("fill", function(d) {if (d.id === 2 ){ return "steelblue"} else return false})
-          //chart3.select("rect[id='2']").attr("fill", function(d) {if (d.id === 2 ){ return "steelblue"} else return false})
-            
+          chart3.selectAll("rect[id='4']").attr("fill", function(d) {if (d.id === 2 ){ return "steelblue"} else return false})  
           }
+
           if(d.id === 1 && this.id === "5"){
-            console.log("hej")
-        
           chart3.selectAll("rect[id='5']").attr("fill", function(d) {if (d.id === 2 ){ return "steelblue"} else return false})
-          //chart3.select("rect[id='2']").attr("fill", function(d) {if (d.id === 2 ){ return "steelblue"} else return false})
-            
           }
+
           if(d.id === 1 && this.id === "6"){
-            console.log("hej")
-        
           chart3.selectAll("rect[id='6']").attr("fill", function(d) {if (d.id === 2 ){ return "steelblue"} else return false})
-          //chart3.select("rect[id='2']").attr("fill", function(d) {if (d.id === 2 ){ return "steelblue"} else return false})
-            
           }
+
           if(d.id === 1 && this.id === "7"){
-            console.log("hej")
-        
           chart3.selectAll("rect[id='7']").attr("fill", function(d) {if (d.id === 2 ){ return "steelblue"} else return false})
-          //chart3.select("rect[id='2']").attr("fill", function(d) {if (d.id === 2 ){ return "steelblue"} else return false})
-            
           }
+
           if(d.id === 1 && this.id === "8"){
-            console.log("hej")
-        
-          chart3.selectAll("rect[id='8']").attr("fill", function(d) {if (d.id === 2 ){ return "steelblue"} else return false})
-          //chart3.select("rect[id='2']").attr("fill", function(d) {if (d.id === 2 ){ return "steelblue"} else return false})
-            
+          chart3.selectAll("rect[id='8']").attr("fill", function(d) {if (d.id === 2 ){ return "steelblue"} else return false})    
           }
+
           if(d.id === 1 && this.id === "9"){
-            console.log("hej")
-        
           chart3.selectAll("rect[id='9']").attr("fill", function(d) {if (d.id === 2 ){ return "steelblue"} else return false})
-          //chart3.select("rect[id='2']").attr("fill", function(d) {if (d.id === 2 ){ return "steelblue"} else return false})
-            
           }
           
           if(d.id === 1 && this.id === "10"){
-            console.log("hej")
-        
           chart3.selectAll("rect[id='10']").attr("fill", function(d) {if (d.id === 2 ){ return "steelblue"} else return false})
-          //chart3.select("rect[id='2']").attr("fill", function(d) {if (d.id === 2 ){ return "steelblue"} else return false})
-            
           }
           tooltip3.style("display",null)
-          
-       //   console.log("mouseOver", d,key)
         }
   
         function handleMouseOut(d,i){
             d3.select(this)
             if(d.id === 1 && this.id === "0"){
-          
             chart3.selectAll("rect[id='0']").attr("fill", function(d) {if (d.id === 2 ){ return "#cf3445"} else return false})
-            //chart3.select("rect[id='2']").attr("fill", function(d) {if (d.id === 2 ){ return "steelblue"} else return false})
-              
           }
+
           if(d.id === 1 && this.id === "1"){
-          
-            chart3.selectAll("rect[id='1']").attr("fill", function(d) {if (d.id === 2 ){ return "#cf3445"} else return false})
-            //chart3.select("rect[id='2']").attr("fill", function(d) {if (d.id === 2 ){ return "steelblue"} else return false})
-              
+            chart3.selectAll("rect[id='1']").attr("fill", function(d) {if (d.id === 2 ){ return "#cf3445"} else return false})  
           }
+
           if(d.id === 1 && this.id === "2"){
-          
-            chart3.selectAll("rect[id='2']").attr("fill", function(d) {if (d.id === 2 ){ return "#cf3445"} else return false})
-            //chart3.select("rect[id='2']").attr("fill", function(d) {if (d.id === 2 ){ return "steelblue"} else return false})
-              
+            chart3.selectAll("rect[id='2']").attr("fill", function(d) {if (d.id === 2 ){ return "#cf3445"} else return false})  
           }
+
           if(d.id === 1 && this.id === "3"){
-          
             chart3.selectAll("rect[id='3']").attr("fill", function(d) {if (d.id === 2 ){ return "#cf3445"} else return false})
-            //chart3.select("rect[id='2']").attr("fill", function(d) {if (d.id === 2 ){ return "steelblue"} else return false})
-              
           }
+
           if(d.id === 1 && this.id === "4"){
-          
             chart3.selectAll("rect[id='4']").attr("fill", function(d) {if (d.id === 2 ){ return "#cf3445"} else return false})
-            //chart3.select("rect[id='2']").attr("fill", function(d) {if (d.id === 2 ){ return "steelblue"} else return false})
-              
           }
+
           if(d.id === 1 && this.id === "5"){
-          
             chart3.selectAll("rect[id='5']").attr("fill", function(d) {if (d.id === 2 ){ return "#cf3445"} else return false})
-            //chart3.select("rect[id='2']").attr("fill", function(d) {if (d.id === 2 ){ return "steelblue"} else return false})
-              
           }
+
           if(d.id === 1 && this.id === "6"){
-          
             chart3.selectAll("rect[id='6']").attr("fill", function(d) {if (d.id === 2 ){ return "#cf3445"} else return false})
-            //chart3.select("rect[id='2']").attr("fill", function(d) {if (d.id === 2 ){ return "steelblue"} else return false})
-              
           }
+
           if(d.id === 1 && this.id === "7"){
-          
-            chart3.selectAll("rect[id='7']").attr("fill", function(d) {if (d.id === 2 ){ return "#cf3445"} else return false})
-            //chart3.select("rect[id='2']").attr("fill", function(d) {if (d.id === 2 ){ return "steelblue"} else return false})
-              
+            chart3.selectAll("rect[id='7']").attr("fill", function(d) {if (d.id === 2 ){ return "#cf3445"} else return false}) 
           }
+
           if(d.id === 1 && this.id === "8"){
-          
             chart3.selectAll("rect[id='8']").attr("fill", function(d) {if (d.id === 2 ){ return "#cf3445"} else return false})
-            //chart3.select("rect[id='2']").attr("fill", function(d) {if (d.id === 2 ){ return "steelblue"} else return false})
-              
           }
+
           if(d.id === 1 && this.id === "9"){
-          
             chart3.selectAll("rect[id='9']").attr("fill", function(d) {if (d.id === 2 ){ return "#cf3445"} else return false})
-            //chart3.select("rect[id='2']").attr("fill", function(d) {if (d.id === 2 ){ return "steelblue"} else return false})
-              
           }
+
           if(d.id === 1 && this.id === "10"){
-          
             chart3.selectAll("rect[id='10']").attr("fill", function(d) {if (d.id === 2 ){ return "#cf3445"} else return false})
-            //chart3.select("rect[id='2']").attr("fill", function(d) {if (d.id === 2 ){ return "steelblue"} else return false})
-              
           }
-
-
             tooltip3.style("display", "none")
         }
   

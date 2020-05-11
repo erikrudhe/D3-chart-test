@@ -127,23 +127,26 @@ d3.csv("data.csv", function(d,i,columns){
         .attr("x", width/2)
         .attr("y", -25);
        
-      var tooltip = chart1.append("g")
-        .attr("class", "tooltip")
-        .style("display", "none");
-          
-      tooltip.append("rect")
-        .attr("width", 30)
-        .attr("height", 20)
-        .attr("fill", "white")
-        .style("opacity", 0.5);
-      
-      tooltip.append("text")
-        .attr("x", 15)
-        .attr("dy", "1.2em")
-        .style("text-anchor", "middle")
-        .attr("font-family", "sans-serif")
-        .attr("font-size", "12px")
-        .attr("font-weight", "bold");
+        var tooltip = chart1.append("g")
+          .attr("class", "tooltip")
+          .style("display", "none");
+            
+        tooltip.append("rect")
+          .attr("width", 80)
+          .attr("height", 30)
+          .attr("fill", "white")
+          .style("opacity", 1)
+          .attr("stroke-width", 0.5)
+          .attr("stroke", "black")
+        
+        tooltip.append("text")
+          .attr("x", 40)
+          .attr("y", 5)
+          .attr("dy", "1.2em")
+          .style("text-anchor", "middle")
+          .attr("font-family", "sans-serif")
+          .attr("font-size", "12px")
+          .attr("font-weight", "bold");
 
 
 
@@ -164,7 +167,14 @@ d3.csv("data.csv", function(d,i,columns){
         var xPosition = d3.mouse(this)[0] - 25;
         var yPosition = d3.mouse(this)[1] - 35;
             tooltip.attr("transform", "translate(" + xPosition + "," + yPosition + ")");
-            tooltip.select("text").text(d[1] - d[0], d[1]);
+            if(d.id === 1){
+              tooltip.select("text").text( "Sökande: " + (d[1] - d[0] + d.data.Antagna) );
+            }
+            else if (d.id === 2 ){
+              tooltip.select("text").text( "Antagna: " + (d[1] - d[0]) );
+            }else{
+              tooltip.select("text").text( "Examen: " + (d[1] - d[0]) );
+            }
            
       }
 })    
