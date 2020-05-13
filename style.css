@@ -1,3 +1,35 @@
+.navigation{
+  margin-left: 210px;
+  margin-top: 8px;
+}
+
+.navigation a{
+  font-family: sans-serif;
+  font-style: normal;
+  color: black;
+  padding: 8px;
+  text-decoration: none;
+  border: 1px solid #ddd;
+}
+
+
+#chart1 h1{
+  margin-left:210px ;
+  font-family: sans-serif;
+}
+#chart2 h1{
+  margin-left:210px ;
+  font-family: sans-serif;
+}
+#chart3 h1{
+  margin-left:210px ;
+  font-family: sans-serif;
+}
+#chart4 h1{
+  margin-left:210px ;
+  font-family: sans-serif;
+}
+
 
 .hej:hover {
  fill:steelblue;
@@ -24,6 +56,23 @@
 .bars3:hover{
   fill: steelblue;
 }
+
+.chart1{
+  display: block;
+}
+.chart3{
+  display: block;
+}
+.chart2{
+  display: block;
+}
+.chart4{
+  display: block;
+}
+.chart5{
+  display: block;
+}
+
 
 
 .highlightedBar {  
