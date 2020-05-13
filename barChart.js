@@ -165,7 +165,7 @@ d3.csv("data.csv", function(d,i,columns){
       function handleMouseMove(d,i){
         d3.select(this)
         var xPosition = d3.mouse(this)[0] - 25;
-        var yPosition = d3.mouse(this)[1] - 35;
+        var yPosition = d3.mouse(this)[1] - 55;
             tooltip.attr("transform", "translate(" + xPosition + "," + yPosition + ")");
             if(d.id === 1){
               tooltip.select("text").text( "Sökande: " + (d[1] - d[0] + d.data.Antagna) );
