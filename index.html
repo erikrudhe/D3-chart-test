@@ -10,16 +10,44 @@
     </style>
     
     <body>
-        <div id="chart1"></div>
-        <div id="chart2"></div>
-        <div id="chart3"></div>
-        <div id="chart4"></div>
-        <div id="chart5"></div>
+        <script>
+                function showPage(id)
+            {
+            var totalNumberOfPages = 4;
+            for(i=1; i<=totalNumberOfPages; i++)
+            {
+            if(document.getElementById('chart'+i))
+                document.getElementById('chart'+i).style.display='none';
+                }
+            if(document.getElementById('chart'+id))
+                document.getElementById('chart'+id).style.display='block';
+            }
+        </script>
+
+        <div id="chart1" style="display: block;">
+            <h1>Graf nummer: 1</h1>
+        </div>
+        <div id="chart2" style="display: none;">
+            <h1>Graf nummer: 2</h1>
+        </div>
+        <div id="chart3" style="display: none;">
+            <h1>Graf nummer: 3</h1>
+        </div>
+        <div id="chart4" style="display: none;">
+            <h1>Graf nummer: 4</h1>
+        </div>
+
+        <div class="navigation">
+            <a href="javascript: onClick=showPage('1')"> graf 1</a>
+            <a href="javascript: onClick=showPage('2')"> graf 2</a>
+            <a href="javascript: onClick=showPage('3')"> graf 3</a>
+            <a href="javascript: onClick=showPage('4')"> graf 4</a>
+        </div>
+
         <script src="https://d3js.org/d3.v4.js"></script>
         <script src="barChart.js"></script>
-        <script src="lineChart.js"></script>
         <script src="barChart2.js"></script>
+        <script src="lineChart.js"></script>
         <script src="stackedAreaChart.js"></script>
-        <script src="barChart5.js"></script>
     </body>
 </html>
