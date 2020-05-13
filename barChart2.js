@@ -2,7 +2,7 @@ const margin3 = {top:80, right:50, bottom:40, left:30};
 const width3 = 600;
 const height3 = 400;
 
-const chart3 = d3.select("#chart1").append("svg")
+const chart3 = d3.select("#chart2").append("svg")
             .attr("width", width3 + margin3.left + margin3.right)
             .attr("height",height3 + margin3.top + margin3.bottom)
             .append("g")
@@ -10,6 +10,7 @@ const chart3 = d3.select("#chart1").append("svg")
 
 const color3 = ['#cf3445','#cf3445','#fee08b'];
 //const color3 = ["#d53e4f","#d41c30","#ad0719"]
+
 
 const x3 = d3.scaleBand()
     .rangeRound([0, width3])
@@ -102,7 +103,7 @@ d3.csv("data.csv", function(d,i,columns){
         .attr("font-weight", "bold")
         .attr("text-anchor", "start");
   
-  
+        
         var legend3 = chart3.append("g")
         .attr("font-family", "sans-serif")
         .attr("font-size", 10)
@@ -111,14 +112,15 @@ d3.csv("data.csv", function(d,i,columns){
         .data(keys3.slice().reverse())
         .enter().append("g")
         .attr("transform", function(d, i) { return "translate(40," + i * 20 +  ")"; })
-        .append("g").attr("transform","translate(-40,-60)");
+        .append("g").attr("transform","translate(-40,-60)")
+        .attr("id",function(d,i){return  i});
   
         legend3.append("rect")
             .attr("x", width3 - 22) 
             .attr("width", 19)
             .attr("height", 19)
-            .attr("fill", z3);
-  
+            .attr("fill", z3)
+            
         legend3.append("text")
             .attr("x", width3 - 30)
             .attr("y", 9.5)
@@ -159,9 +161,9 @@ d3.csv("data.csv", function(d,i,columns){
   
         function handleMouseOver(d,key){
           d3.select(this)
-          console.log(this)
-          console.log(d)
-          console.log( this.id)
+        //  console.log(this)
+        //  console.log(d)
+        //  console.log( this.id)
 
           if(d.id === 1 && this.id === "0"){
             chart3.selectAll("rect[id='0']").attr("fill", function(d) {if (d.id === 2 ){ return "steelblue"} else return false})

@@ -1,8 +1,8 @@
-const margin1 = {top:80, right:50, bottom:40, left:30};
+const margin1 = {top:80, right:60, bottom:40, left:30};
 const width1 = 600;
 const height1 = 400;
 
-const chart2 = d3.select("#chart2").append("svg")
+const chart2 = d3.select("#chart3").append("svg")
             .attr("width", width1 + margin1.left + margin1.right)
             .attr("height",height1 + margin1.top + margin1.bottom)
             .append("g")
@@ -182,7 +182,7 @@ chart2.selectAll("myCircles")
         d3.select(this)
         .attr("r", 8);
         tooltip1.style("display",null)
-        console.log(d);
+      //  console.log(d);
     }
 
     function handleMouseOut(d,i){

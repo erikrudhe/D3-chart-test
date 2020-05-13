@@ -1,4 +1,4 @@
-const margin4 = {top:80, right:50, bottom:40, left:30};
+const margin4 = {top:80, right:60, bottom:40, left:30};
 const width4 = 600;
 const height4 = 400;
 
