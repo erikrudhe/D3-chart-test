@@ -263,7 +263,7 @@ d3.csv("data.csv", function(d,i,columns){
           
         //  console.log(d3.select(this).attr("id"))
          // console.log(typeof d3.select(this).attr("id"))
-        // console.log(typeof d3.select(this));
+       //  console.log(d);
        // console.log( document.querySelector('rect').__data__ )
           var xPosition = d3.mouse(this)[0] - 25;
           var yPosition = d3.mouse(this)[1] - 55;

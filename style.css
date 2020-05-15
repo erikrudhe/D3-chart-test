@@ -1,9 +1,9 @@
-.navigation{
+#navigation{
   margin-left: 210px;
   margin-top: 8px;
 }
 
-.navigation a{
+#navigation a{
   font-family: sans-serif;
   font-style: normal;
   color: black;
@@ -12,6 +12,20 @@
   border: 1px solid #ddd;
 }
 
+.btn {
+  border: none;
+  outline: none;
+  padding: 10px 16px;
+  background-color: #f1f1f1;
+  cursor: pointer;
+  font-size: 18px;
+}
+
+/* Style the active class, and buttons on mouse-over */
+.active, .btn:hover {
+  background-color: #666;
+  color: white;
+}
 
 #chart1 h1{
   margin-left:210px ;

@@ -29,25 +29,39 @@ d3.csv("data.csv", function(d,i,columns){
 }, function(error,data){
     if (error) throw error; 
 
+    /*
     data.forEach((d,i) => {
       d.id  = i +1;     
     });
-
-  //  console.log(data)
+*/
 
 
     var keys = data.columns.slice(1);
 
-  //  console.log(data.key)
-   
-   // data.sort(function(a,b){ return b.total - a.total});
     x.domain(data.map(function(d){ return d.år}));
     y.domain([0, d3.max(data, function(d) { return d.total; })]).nice();
     z.domain(keys);
 
+    const dataStacked = d3.stack().keys(keys)(data);
+
+    for(var i = 0; i < dataStacked.length; i++){
+      for(var j = 0; j < dataStacked[i].length; j++){
+        for(var k = 0; k < dataStacked[i][k].length; k++){
+          //console.log(data1[i][k])
+          dataStacked[i][j].id = i + 1
+        }
+      }
+    }
+
+   // console.log(data)
+  //  console.log(data.key)
+   
+   // data.sort(function(a,b){ return b.total - a.total});
+  
+
     var bars = chart1.append("g")
     .selectAll("g")
-    .data(d3.stack().keys(keys)(data))
+    .data(dataStacked)
     .enter().append("g")
     .attr("id",function(d,i){
       return data[d];
@@ -61,6 +75,7 @@ d3.csv("data.csv", function(d,i,columns){
       .attr("height", function(d) { return y(d[0]) - y(d[1]); })
       .attr("width", x.bandwidth())
       .attr("class","hej")
+      .attr("id",function(d,i){return  i})
       .on("mouseover", handleMouseOver)
       .on("mouseout", handleMouseOut)
       .on("mousemove",handleMouseMove)
@@ -163,17 +178,21 @@ d3.csv("data.csv", function(d,i,columns){
       }
 
       function handleMouseMove(d,i){
+       //   console.log(typeof d3.select(this).attr("id"))
+        // console.log(d);
+       // console.log( document.querySelector('rect').__data__ )
         d3.select(this)
         var xPosition = d3.mouse(this)[0] - 25;
         var yPosition = d3.mouse(this)[1] - 55;
             tooltip.attr("transform", "translate(" + xPosition + "," + yPosition + ")");
+
             if(d.id === 1){
               tooltip.select("text").text( "Sökande: " + (d[1] - d[0] + d.data.Antagna) );
             }
             else if (d.id === 2 ){
               tooltip.select("text").text( "Antagna: " + (d[1] - d[0]) );
             }else{
-              tooltip.select("text").text( "Examen: " + (d[1] - d[0]) );
+              tooltip.select("text").text(  "Examen: " + (d[1] - d[0]) );
             }
            
       }
