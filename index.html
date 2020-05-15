@@ -18,11 +18,14 @@
             {
             if(document.getElementById('chart'+i))
                 document.getElementById('chart'+i).style.display='none';
+                console.log(this)
                 }
             if(document.getElementById('chart'+id))
                 document.getElementById('chart'+id).style.display='block';
+                console.log(this)
             }
         </script>
+
        
         
 
@@ -41,11 +44,24 @@
 
         
         <div id="navigation">
-            <a  href="javascript: onClick=showPage('1')">graf 1</a>
-            <a  href="javascript: onClick=showPage('2')">graf 2</a>
-            <a  href="javascript: onClick=showPage('3')"> graf 3</a>
-            <a  href="javascript: onClick=showPage('4')"> graf 4</a>
+            <a class="btn active" href="javascript: onClick=showPage('1')">graf 1</a>
+            <a class="btn" href="javascript: onClick=showPage('2')">graf 2</a>
+            <a class="btn" href="javascript: onClick=showPage('3')">graf 3</a>
+            <a class="btn" href="javascript: onClick=showPage('4')">graf 4</a>
         </div>
+
+        <script>
+            // Add active class to the current button (highlight it)
+            var header = document.getElementById("navigation");
+            var btns = header.getElementsByClassName("btn");
+            for (var i = 0; i < btns.length; i++) {
+              btns[i].addEventListener("click", function() {
+              var current = document.getElementsByClassName("active");
+              current[0].className = current[0].className.replace(" active", "");
+              this.className += " active";
+              });
+            }
+        </script>
     
 
         <script src="https://d3js.org/d3.v4.js"></script>
