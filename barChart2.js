@@ -1,4 +1,4 @@
-const margin3 = {top:80, right:50, bottom:40, left:30};
+const margin3 = {top:80, right:50, bottom:60, left:60};
 const width3 = 600;
 const height3 = 400;
 
@@ -91,6 +91,12 @@ d3.csv("data.csv", function(d,i,columns){
         .attr("class", "axis")
         .attr("transform", "translate(0," + height3 + ")")
         .call(d3.axisBottom(x3));
+
+        chart3.append("text")             
+        .attr("x",width/2)
+        .attr("y",height + 40)
+        .style("text-anchor", "middle")
+        .text("År");
   
         chart3.append("g")
         .attr("class", "axis")
@@ -102,6 +108,15 @@ d3.csv("data.csv", function(d,i,columns){
         .attr("fill", "#000")
         .attr("font-weight", "bold")
         .attr("text-anchor", "start");
+
+        chart3.append("text")
+      .attr("transform", "rotate(-90)")
+      .attr("y", 0 - margin.left)
+      .attr("x",0 - (height / 2))
+      .attr("dy", "1em")
+      .attr("font-family", "sans-serif")
+      .style("text-anchor", "middle")
+      .text("Antal");  
   
         
         var legend3 = chart3.append("g")
@@ -129,10 +144,10 @@ d3.csv("data.csv", function(d,i,columns){
   
         var title3 = chart3.append("g")
           .attr("font-family", "sans-serif")
-          .attr("font-size", 20)
+          .attr("font-size", 16)
           .attr("text-anchor", "middle")
           .append("text")
-          .text("Civilingenjör Medieteknik Liu")
+          .text("Civilingenjör Medieteknik Linköpings Universitet")
           .attr("x", width3/2)
           .attr("y", -25);
          

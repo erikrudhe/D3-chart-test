@@ -1,4 +1,4 @@
-const margin = {top:80, right:50, bottom:40, left:30};
+const margin = {top:80, right:50, bottom:60, left:60};
 const width = 600;
 const height = 400;
 
@@ -88,9 +88,6 @@ d3.csv("data.csv", function(d,i,columns){
         .attr("text-anchor", "middle")
         .attr("font-family", "sans-serif")
         .attr("font-size", 11)
-        .attr("y", function(d){ return y(d.total) -4})
-        .attr("x",function(d,i){return i * (width /data.length ) + (width / data.length - 30) })
-        .text(function(d){ return d.total})
 
           // (x.bandwidth()/2)
 
@@ -98,6 +95,12 @@ d3.csv("data.csv", function(d,i,columns){
       .attr("class", "axis")
       .attr("transform", "translate(0," + height + ")")
       .call(d3.axisBottom(x));
+
+      chart1.append("text")             
+      .attr("x",width/2)
+      .attr("y",height + 40)
+      .style("text-anchor", "middle")
+      .text("År");
 
       chart1.append("g")
       .attr("class", "axis")
@@ -109,6 +112,15 @@ d3.csv("data.csv", function(d,i,columns){
       .attr("fill", "#000")
       .attr("font-weight", "bold")
       .attr("text-anchor", "start");
+
+      chart1.append("text")
+      .attr("transform", "rotate(-90)")
+      .attr("y", 0 - margin.left)
+      .attr("x",0 - (height / 2))
+      .attr("dy", "1em")
+      .attr("font-family", "sans-serif")
+      .style("text-anchor", "middle")
+      .text("Antal");   
 
 
       var legend = chart1.append("g")
@@ -135,10 +147,10 @@ d3.csv("data.csv", function(d,i,columns){
 
       var title = chart1.append("g")
         .attr("font-family", "sans-serif")
-        .attr("font-size", 20)
+        .attr("font-size", 16)
         .attr("text-anchor", "middle")
         .append("text")
-        .text("Civilingenjör Medieteknik Liu")
+        .text("Civilingenjör Medieteknik Linköpings Universitet")
         .attr("x", width/2)
         .attr("y", -25);
        
@@ -187,7 +199,7 @@ d3.csv("data.csv", function(d,i,columns){
             tooltip.attr("transform", "translate(" + xPosition + "," + yPosition + ")");
 
             if(d.id === 1){
-              tooltip.select("text").text( "Sökande: " + (d[1] - d[0] + d.data.Antagna) );
+              tooltip.select("text").text( "Sökande: " + (d[1] - d[0] ) );
             }
             else if (d.id === 2 ){
               tooltip.select("text").text( "Antagna: " + (d[1] - d[0]) );

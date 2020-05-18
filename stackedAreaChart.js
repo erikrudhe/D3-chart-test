@@ -1,4 +1,4 @@
-const margin4 = {top:80, right:60, bottom:40, left:30};
+const margin4 = {top:80, right:60, bottom:60, left:60};
 const width4 = 600;
 const height4 = 400;
 
@@ -74,9 +74,24 @@ d3.csv("data.csv",function(error,data){
     .attr("transform", "translate(0," + height4 + ")")
     .call(d3.axisBottom(x4).tickFormat(d3.format("d")));    
 
+    chart4.append("text")             
+    .attr("x",width/2)
+    .attr("y",height + 40)
+    .style("text-anchor", "middle")
+    .text("År");
+
     // Add the Y Axis
    var yAxis =  chart4.append("g")
     .call(d3.axisLeft(y4));
+
+    chart4.append("text")
+      .attr("transform", "rotate(-90)")
+      .attr("y", 0 - margin.left)
+      .attr("x",0 - (height / 2))
+      .attr("dy", "1em")
+      .attr("font-family", "sans-serif")
+      .style("text-anchor", "middle")
+      .text("Antal"); 
 
    chart4.append("path")
    .data([data])
@@ -187,10 +202,10 @@ d3.csv("data.csv",function(error,data){
     
         var title4 = chart4.append("g")
         .attr("font-family", "sans-serif")
-        .attr("font-size", 20)
+        .attr("font-size", 16)
         .attr("text-anchor", "middle")
         .append("text")
-        .text("Civilingenjör Medieteknik Liu")
+        .text("Civilingenjör Medieteknik Linköpings Universitet")
         .attr("x", width4/2)
         .attr("y", -25);    
 
@@ -215,51 +230,6 @@ d3.csv("data.csv",function(error,data){
           .attr("font-size", "12px")
           .attr("font-weight", "bold");
 
-      /*
-          var focus = chart4.append("g")
-            .attr("class", "focus")
-            .style("display", "none");
-
-          focus.append("line")
-              .attr("class", "x-hover-line hover-line")
-              .attr("y1", 0)
-              .attr("y2", height4);
-
-          focus.append("line")
-              .attr("class", "y-hover-line hover-line")
-              .attr("x1", width4)
-              .attr("x2", width4);
-
-          focus.append("circle")
-              .attr("r", 7.5);
-
-          focus.append("text")
-              .attr("x", 15)
-              .attr("dy", ".31em");
-
-          chart4.append("rect")
-          //  .attr("transform", "translate(" + (margin4.left -30) + "," + (margin4.top -70) + ")")
-            .attr("class", "overlay")
-            .attr("width", width4)
-            .attr("height", height4)
-            .on("mouseover", function() { focus.style("display", null); })
-            .on("mouseout", function() { focus.style("display", "none"); })
-            .on("mousemove", mousemove);   
-
-            
-            function mousemove() {
-              var x0 = x4.invert(d3.mouse(this)[0]),
-                  i = bisectDate(data, x0, 1) ,
-                  d0 = data[i -1],
-                  d1 = data[i],
-                  d = x0 - d0.år > d1.år - x0 ? d1 : d0;
-                  //console.log(d0)
-              focus.attr("transform", "translate(" + x(d.år) + "," + y(d.Sökande) +  ")");
-              focus.select("text").text(function() { return d.Sökande; });
-              focus.select(".x-hover-line").attr("y2", height4 - y(d.Sökande) );
-            }
-
-        */    
             function handleMouseOver(d,i){
                 d3.select(this)
                 tooltip4.style("display",null)

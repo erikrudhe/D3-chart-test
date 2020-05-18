@@ -1,4 +1,4 @@
-const margin1 = {top:80, right:60, bottom:40, left:30};
+const margin1 = {top:80, right:60, bottom:60, left:60};
 const width1 = 600;
 const height1 = 400;
 
@@ -121,9 +121,24 @@ chart2.selectAll("myCircles")
   .attr("transform", "translate(0," + height1 + ")")
   .call(d3.axisBottom(xRange).tickFormat(d3.format("d")));    
 
+  chart2.append("text")             
+      .attr("x",width/2)
+      .attr("y",height + 40)
+      .style("text-anchor", "middle")
+      .text("År");
+
     // Add the Y Axis
     chart2.append("g")
     .call(d3.axisLeft(yRange));
+
+    chart2.append("text")
+      .attr("transform", "rotate(-90)")
+      .attr("y", 0 - margin.left)
+      .attr("x",0 - (height / 2))
+      .attr("dy", "1em")
+      .attr("font-family", "sans-serif")
+      .style("text-anchor", "middle")
+      .text("Antal");  
     
     var tooltip1 = chart2.append("g")
     .attr("class", "tooltip")
@@ -170,10 +185,10 @@ chart2.selectAll("myCircles")
 
     var title = chart2.append("g")
         .attr("font-family", "sans-serif")
-        .attr("font-size", 20)
+        .attr("font-size", 16)
         .attr("text-anchor", "middle")
         .append("text")
-        .text("Civilingenjör Medieteknik Liu")
+        .text("Civilingenjör Medieteknik Linköpings Universitet")
         .attr("x", width1/2)
         .attr("y", -25);
 
