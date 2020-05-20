@@ -1,3 +1,4 @@
+// Graf nummer 1
 const margin = {top:80, right:50, bottom:60, left:60};
 const width = 600;
 const height = 400;
