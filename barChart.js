@@ -1,5 +1,5 @@
 // Graf nummer 1
-const margin = {top:80, right:50, bottom:60, left:60};
+const margin = {top:65, right:300, bottom:60, left:60};
 const width = 600;
 const height = 400;
 
@@ -24,7 +24,8 @@ const z = d3.scaleOrdinal()
 
     
 d3.csv("data.csv", function(d,i,columns){
-    for(i = 1, t = 0; i < columns.length; ++i) t += d[columns[i]] = +d[columns[i]];
+    for(i = 7, t = 0; i < columns.length; ++i)
+    t += d[columns[i]] = +d[columns[i]];
     d.total = t;
     return d;
 }, function(error,data){
@@ -37,7 +38,9 @@ d3.csv("data.csv", function(d,i,columns){
 */
 
 
-    var keys = data.columns.slice(1);
+    var keys = data.columns.slice(7);
+
+    
 
     x.domain(data.map(function(d){ return d.år}));
     y.domain([0, d3.max(data, function(d) { return d.total; })]).nice();
@@ -54,8 +57,6 @@ d3.csv("data.csv", function(d,i,columns){
       }
     }
 
-   // console.log(data)
-  //  console.log(data.key)
    
    // data.sort(function(a,b){ return b.total - a.total});
   
@@ -175,6 +176,8 @@ d3.csv("data.csv", function(d,i,columns){
           .attr("font-family", "sans-serif")
           .attr("font-size", "12px")
           .attr("font-weight", "bold");
+         
+         
 
 
 
@@ -196,16 +199,16 @@ d3.csv("data.csv", function(d,i,columns){
        // console.log( document.querySelector('rect').__data__ )
         d3.select(this)
         var xPosition = d3.mouse(this)[0] - 25;
-        var yPosition = d3.mouse(this)[1] - 55;
+        var yPosition = d3.mouse(this)[1] - 65;
             tooltip.attr("transform", "translate(" + xPosition + "," + yPosition + ")");
 
             if(d.id === 1){
-              tooltip.select("text").text( "Sökande: " + (d[1] - d[0] ) );
+              tooltip.select("text").text( "Sökande: " + (d[1] - d[0] ) )
             }
             else if (d.id === 2 ){
               tooltip.select("text").text( "Antagna: " + (d[1] - d[0]) );
             }else{
-              tooltip.select("text").text(  "Examen: " + (d[1] - d[0]) );
+              tooltip.select("text").text( "Examen: " + (d[1] - d[0]) );
             }
            
       }

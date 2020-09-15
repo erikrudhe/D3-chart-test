@@ -1,5 +1,5 @@
 // Graf nummer 2
-const margin3 = {top:80, right:50, bottom:60, left:60};
+const margin3 = {top:65, right:50, bottom:60, left:60};
 const width3 = 600;
 const height3 = 400;
 
@@ -26,7 +26,7 @@ const z3 = d3.scaleOrdinal()
     
 
 d3.csv("data.csv", function(d,i,columns){
-    for(i = 1, t = 0; i < columns.length; ++i) t += d[columns[i]] = +d[columns[i]];
+    for(i = 7, t = 0; i < columns.length; ++i) t += d[columns[i]] = +d[columns[i]];
     d.total = t;
     return d;
 }, function(error,data){
@@ -39,7 +39,7 @@ d3.csv("data.csv", function(d,i,columns){
       item.Sökande = item.Sökande - item.Antagna
     })
 
-    var keys3 = data.columns.slice(1);
+    var keys3 = data.columns.slice(7);
 
     
 
@@ -152,7 +152,7 @@ d3.csv("data.csv", function(d,i,columns){
           .attr("x", width3/2)
           .attr("y", -25);
          
-        var tooltip3 = chart3.append("g")
+          var tooltip3 = chart3.append("g")
           .attr("class", "tooltip")
           .style("display", "none");
             
@@ -282,13 +282,13 @@ d3.csv("data.csv", function(d,i,columns){
        //  console.log(d);
        // console.log( document.querySelector('rect').__data__ )
           var xPosition = d3.mouse(this)[0] - 25;
-          var yPosition = d3.mouse(this)[1] - 55;
+          var yPosition = d3.mouse(this)[1] - 65;
               tooltip3.attr("transform", "translate(" + xPosition + "," + yPosition + ")");
               if(d.id === 1){
                 tooltip3.select("text").text( "Sökande: " + (d[1] - d[0] + d.data.Antagna) );
               }
               else if (d.id === 2 ){
-                tooltip3.select("text").text( "Antagna: " + (d[1] - d[0]) );
+                tooltip3.select("text").text( "Antagna: " + (d[1] - d[0])  );
               }else{
                 tooltip3.select("text").text( "Examen: " + (d[1] - d[0]) );
               }

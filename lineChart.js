@@ -1,5 +1,5 @@
 // Graf nummer 3
-const margin1 = {top:80, right:60, bottom:60, left:60};
+const margin1 = {top:65, right:60, bottom:60, left:60};
 const width1 = 600;
 const height1 = 400;
 
@@ -40,10 +40,16 @@ d3.csv("data.csv",function(error,data){
         d.Sökande =+ d.Sökande;
         d.Antagna =+ d.Antagna;
         d.Examen =+ d.Examen;
+        d.Ms =+ d.Ms;
+        d.Ks =+ d.Ks;
+        d.Ma =+ d.Ma;
+        d.Ka =+ d.Ks;
+        d.Me =+ d.Me;
+        d.Ke =+ d.Ke;
     });
     
 
-    var keys1 = data.columns.slice(1);
+    var keys1 = data.columns.slice(7);
 
    // console.log(data)
 
@@ -141,26 +147,26 @@ chart2.selectAll("myCircles")
       .style("text-anchor", "middle")
       .text("Antal");  
     
-    var tooltip1 = chart2.append("g")
-    .attr("class", "tooltip")
-    .style("display", "none");
-      
-  tooltip1.append("rect")
-    .attr("width", 80)
-    .attr("height", 30)
-    .attr("fill", "white")
-    .style("opacity", 1)
-    .attr("stroke-width", 0.5)
-    .attr("stroke", "black")
-  
-  tooltip1.append("text")
-    .attr("x", 40)
-    .attr("y", 5)
-    .attr("dy", "1.2em")
-    .style("text-anchor", "middle")
-    .attr("font-family", "sans-serif")
-    .attr("font-size", "12px")
-    .attr("font-weight", "bold");
+      var tooltip1 = chart2.append("g")
+      .attr("class", "tooltip")
+      .style("display", "none");
+        
+    tooltip1.append("rect")
+      .attr("width", 80)
+      .attr("height", 30)
+      .attr("fill", "white")
+      .style("opacity", 1)
+      .attr("stroke-width", 0.5)
+      .attr("stroke", "black")
+    
+    tooltip1.append("text")
+      .attr("x", 40)
+      .attr("y", 5)
+      .attr("dy", "1.2em")
+      .style("text-anchor", "middle")
+      .attr("font-family", "sans-serif")
+      .attr("font-size", "12px")
+      .attr("font-weight", "bold");
 
     var legend1 = chart2.append("g")
     .attr("font-family", "sans-serif")
@@ -212,7 +218,7 @@ chart2.selectAll("myCircles")
       //  console.log(d3.select(this).attr("id"))
       //  console.log(typeof d3.select(this).attr("id"))
         var xPosition = d3.mouse(this)[0] - 25;
-        var yPosition = d3.mouse(this)[1] - 35;
+        var yPosition = d3.mouse(this)[1] - 65;
 
   
             tooltip1.attr("transform", "translate(" + xPosition + "," + yPosition + ")");

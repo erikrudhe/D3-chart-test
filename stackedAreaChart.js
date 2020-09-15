@@ -1,5 +1,5 @@
 // Graf nummer 4
-const margin4 = {top:80, right:60, bottom:60, left:60};
+const margin4 = {top:65, right:60, bottom:60, left:60};
 const width4 = 600;
 const height4 = 400;
 
@@ -59,10 +59,16 @@ d3.csv("data.csv",function(error,data){
         d.Sökande =+ d.Sökande;
         d.Antagna =+ d.Antagna;
         d.Examen =+ d.Examen;
+        d.Ms =+ d.Ms;
+        d.Ks =+ d.Ks;
+        d.Ma =+ d.Ma;
+        d.Ka =+ d.Ks;
+        d.Me =+ d.Me;
+        d.Ke =+ d.Ke;
      //   d.år = parseTime(d.år);
     });
   
-    var keys4 = data.columns.slice(1);
+    var keys4 = data.columns.slice(7);
 
     // Set the domain for 
     x4.domain(d3.extent(data,function(d){return d.år}));
@@ -246,7 +252,7 @@ d3.csv("data.csv",function(error,data){
               //  console.log(d3.select(this).attr("id"))
               //  console.log(typeof d3.select(this).attr("id"))
                 var xPosition = d3.mouse(this)[0] - 25;
-                var yPosition = d3.mouse(this)[1] - 35;
+                var yPosition = d3.mouse(this)[1] - 65;
         
           
                     tooltip4.attr("transform", "translate(" + xPosition + "," + yPosition + ")");
